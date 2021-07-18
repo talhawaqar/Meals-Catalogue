@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchMeals } from '../actions';
+import Hero from '../components/Hero';
 
 class MealsList extends React.Component {
 
@@ -9,7 +10,9 @@ class MealsList extends React.Component {
   }
 
   render(){
-    return <h1>I am from meal list</h1>;
+    return (
+      <Hero />
+    );
   }
 }
 
