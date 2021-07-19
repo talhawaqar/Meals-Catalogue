@@ -1,13 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchMeals } from '../actions';
+import { fetchMeals, fetchCategories, fetchAreas } from '../actions';
 import Hero from '../components/Hero';
 import Meal from '../components/Meal';
+import Filter from '../components/Filter';
 
 class MealsList extends React.Component {
 
   componentDidMount() {
     this.props.fetchMeals('American', 'Beef');
+    this.props.fetchCategories();
+    this.props.fetchAreas();
   }
 
   renderList() {
@@ -26,6 +29,7 @@ class MealsList extends React.Component {
       <>
         <Hero />
         <div className="container">
+          <Filter categories={ this.props.categories } areas= { this.props.areas } />
           <div className="row">
             {this.renderList()}
           </div>
@@ -37,8 +41,10 @@ class MealsList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    meals: Object.values(state.meals)
+    meals: Object.values(state.meals),
+    categories: state.categories,
+    areas: state.areas,
   }
 }
 
-export default connect(mapStateToProps, { fetchMeals })(MealsList);
+export default connect(mapStateToProps, { fetchMeals, fetchCategories, fetchAreas })(MealsList);

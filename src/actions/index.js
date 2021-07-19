@@ -26,7 +26,11 @@ export const fetchMeal = (mealId) => async (dispatch) => {
 }
 
 export const fetchAreas = () => async (dispatch) => {
-  const response = await meals.get('list.php', {a: 'list'});
+  const response = await meals.get('/list.php',
+  {
+    params: {a: 'list'}
+  });
+  console.log(response.data);
   dispatch({
     type: FETCH_AREAS,
     payload: response.data
@@ -34,9 +38,9 @@ export const fetchAreas = () => async (dispatch) => {
 }
 
 export const fetchCategories = () => async (dispatch) => {
-  const response = await meals.get('list.php', {c: 'list'});
+  const response = await meals.get('categories.php');
   dispatch({
     type: FETCH_CATEGORIES,
-    payload: response.data
+    payload: response.data.categories
   });
 }

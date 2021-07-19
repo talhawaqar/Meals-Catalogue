@@ -1,0 +1,12 @@
+.filter span {
+  font-size: 22px;
+}
+
+.filter select {
+  border-radius: 2px;
+  border: solid gray 1px;
+  font-size: 18px;
+  background-color: white;
+  padding: 3px 5px;
+  margin-left: 20px;
+}
