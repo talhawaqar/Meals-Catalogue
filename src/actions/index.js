@@ -6,10 +6,9 @@ import {
 } from './types';
 import meals from '../apis/meals';
 
-
-export const fetchMeals = (area, category) => async (dispatch) => {
-  const response = await meals.get(`/filter.php`, {
-    params: {a: area, c: category}
+export const fetchMeals = (category) => async (dispatch) => {
+  const response = await meals.get('/filter.php', {
+    params: {c: category }
   });
   dispatch({
     type: FETCH_MEALS,

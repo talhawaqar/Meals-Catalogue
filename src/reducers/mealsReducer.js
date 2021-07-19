@@ -4,10 +4,10 @@ import {
   FETCH_MEAL
 } from '../actions/types';
 
-export default (state = {}, action ) => {
+export default (state = [], action ) => {
   switch(action.type) {
     case FETCH_MEALS:
-      return {...state, ..._.mapKeys(action.payload, 'idMeal')};
+      return action.payload;
     case FETCH_MEAL:
       return { ...state, [action.payload.idMeal]: action.payload };
     default:
