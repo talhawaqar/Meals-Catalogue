@@ -11,7 +11,6 @@ export const fetchMeals = (area, category) => async (dispatch) => {
   const response = await meals.get(`/filter.php`, {
     params: {a: area, c: category}
   });
-  console.log(response.data);
   dispatch({
     type: FETCH_MEALS,
     payload: response.data.meals
