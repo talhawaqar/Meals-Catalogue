@@ -1,8 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './header.css';
 
 const Header = () => {
   return(
-    <h1>I am header</h1>
+    <div className="d-flex w-100 header">
+      <Link className='header-logo' to='/'>Meals In</Link>
+    </div>
   );
 }
 

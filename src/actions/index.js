@@ -17,7 +17,11 @@ export const fetchMeals = (category) => async (dispatch) => {
 }
 
 export const fetchMeal = (mealId) => async (dispatch) => {
-  const response = await meals.get('/lookup.php/', { i: mealId });
+  const response = await meals.get('/lookup.php/', 
+    { 
+      params: {i: mealId}
+    }
+  );
   dispatch({
     type: FETCH_MEAL,
     payload: response.data.meals

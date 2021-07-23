@@ -7,9 +7,9 @@ import {
 export default (state = [], action ) => {
   switch(action.type) {
     case FETCH_MEALS:
-      return action.payload;
+      return { ..._.mapKeys(action.payload, 'idMeal') };
     case FETCH_MEAL:
-      return { ...state, [action.payload.idMeal]: action.payload };
+      return { ...state, [action.payload[0].idMeal]: action.payload[0] };
     default:
       return state;
   };

@@ -53,9 +53,8 @@ class MealsList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    meals: state.meals,
+    meals: Object.values(state.meals),
     categories: state.categories,
-    areas: state.areas,
   }
 }
 

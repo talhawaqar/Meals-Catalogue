@@ -1,0 +1,12 @@
+.footer {
+  color: white;
+  background-color: #007bff;
+  margin: 20px 0 0 0;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer h3 {
+  font-size: 16px;
+}
