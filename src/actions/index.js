@@ -2,7 +2,6 @@ import {
   FETCH_MEALS,
   FETCH_MEAL,
   FETCH_CATEGORIES,
-  FETCH_AREAS
 } from './types';
 import meals from '../apis/meals';
 
@@ -25,18 +24,6 @@ export const fetchMeal = (mealId) => async (dispatch) => {
   dispatch({
     type: FETCH_MEAL,
     payload: response.data.meals
-  });
-}
-
-export const fetchAreas = () => async (dispatch) => {
-  const response = await meals.get('/list.php',
-  {
-    params: {a: 'list'}
-  });
-  console.log(response.data);
-  dispatch({
-    type: FETCH_AREAS,
-    payload: response.data
   });
 }
 

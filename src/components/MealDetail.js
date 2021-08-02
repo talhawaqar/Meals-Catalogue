@@ -11,15 +11,15 @@ class MealDetail extends React.Component {
 
   renderIngrediants = () => {
     const meal = this.props.meal;
-    let ingrediants = [<span> 1. { meal.strIngredient1 } </span>, <span> { meal.strMeasure1 } </span>, <br/>];
+    let ingrediants = [<span key={meal.strIngredient1}> 1. { meal.strIngredient1 } </span>, <span key={ meal.strMeasure1 }> { meal.strMeasure1 } </span>, <br key='1'/>];
     for( let i=2; i<=20; i++ ) {
-      if(meal[`strIngredient${i}`] === '')
+      if(meal[`strIngredient${i}`] === '' || meal[`strIngredient${i}`] === null )
       {
         break;
       }
-      ingrediants.push(<span> {`${i}`}. { meal[`strIngredient${i}`] } </span>);
-      ingrediants.push(<span> { meal[`strMeasure${i}`] } </span>);
-      ingrediants.push(<br/>);  
+      ingrediants.push(<span key={meal[`strIngredient${i}`]}> {`${i}`}. { meal[`strIngredient${i}`] } </span>);
+      ingrediants.push(<span key={meal[`strMeasure${i}`]+i}> { meal[`strMeasure${i}`] } </span>);
+      ingrediants.push(<br key={i} />);  
     }
     return ingrediants;
   }
@@ -33,10 +33,10 @@ class MealDetail extends React.Component {
     return (
       <>
         <div className='container main'>
-          <div style = {{ backgroundImage: `url(${meal.strMealThumb})` }}className='hero w-100'>
+          <div key='hero' style = {{ backgroundImage: `url(${meal.strMealThumb})` }}className='hero w-100'>
           </div> 
           <h1 className='mt-3' > { meal.strMeal } </h1>
-          <div className='row mt-4'>
+          <div key='details' className='row mt-4'>
             <div className='col-12'>
               <span className='heading' >Category:</span> <span className='detail'> { meal.strCategory } </span>
               <br/>

@@ -1,7 +1,8 @@
 .header {
   height: 70px;
   align-items: center;
-  background-color: #184a25;
+  /* background-color: #184a25; */
+  background-color: #007bff;
 }
 
 .header .header-logo {
