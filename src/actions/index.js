@@ -2,11 +2,12 @@ import {
   FETCH_MEALS,
   FETCH_MEAL,
   FETCH_CATEGORIES,
+  BASE_URL
 } from './types';
-import meals from '../apis/meals';
+import axios from 'axios';
 
 export const fetchMeals = (category) => async (dispatch) => {
-  const response = await meals.get('/filter.php', {
+  const response = await axios.get( BASE_URL+'/filter.php', {
     params: {c: category }
   });
   dispatch({
@@ -16,7 +17,7 @@ export const fetchMeals = (category) => async (dispatch) => {
 }
 
 export const fetchMeal = (mealId) => async (dispatch) => {
-  const response = await meals.get('/lookup.php/', 
+  const response = await axios.get( BASE_URL+'lookup.php/', 
     { 
       params: {i: mealId}
     }
@@ -28,9 +29,10 @@ export const fetchMeal = (mealId) => async (dispatch) => {
 }
 
 export const fetchCategories = () => async (dispatch) => {
-  const response = await meals.get('categories.php');
+  const response = await axios.get( BASE_URL+'categories.php');
   dispatch({
     type: FETCH_CATEGORIES,
     payload: response.data.categories
   });
 }
+
