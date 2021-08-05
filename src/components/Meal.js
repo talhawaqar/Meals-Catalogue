@@ -7,7 +7,7 @@ const Meal = (props) => {
     mealId, title, imageUrl, category,
   } = props;
   return (
-    <div className="col-12 col-md-4 mt-3">
+    <div key={mealId} className="col-12 col-md-4 mt-3">
       <div className="card">
         <img src={imageUrl} className="card-img-top" alt="..." />
         <div className="card-body">
