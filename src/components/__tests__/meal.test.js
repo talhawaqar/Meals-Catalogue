@@ -5,23 +5,25 @@ import Meal from '../Meal';
 
 describe('Meal component', () => {
   test('renders meal component', () => {
-    const meal =  {
-      "mealId": "1",
-      "title": "Biryani",
-      "imageUrl": ".jpg",
-      "category": "Beef"
-    }
-    const { mealId, title, imageUrl, category } = meal;
+    const meal = {
+      mealId: '1',
+      title: 'Biryani',
+      imageUrl: '.jpg',
+      category: 'Beef',
+    };
+    const {
+      mealId, title, imageUrl, category,
+    } = meal;
 
     render(
       <BrowserRouter>
-        <Meal 
-          mealId={ mealId }
-          title = { title } 
-          imageUrl = {imageUrl}
-          category= {category}
+        <Meal
+          mealId={mealId}
+          title={title}
+          imageUrl={imageUrl}
+          category={category}
         />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     expect(screen.getByText('Biryani')).toBeInTheDocument();
     expect(screen.getByText('Beef')).toBeInTheDocument();

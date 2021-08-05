@@ -7,10 +7,10 @@ import Header from '../Header';
 describe('Header', () => {
   test('renders Header component', () => {
     render(
-        <BrowserRouter>
-          <Header />
-        </BrowserRouter>
-      );
+      <BrowserRouter>
+        <Header />
+      </BrowserRouter>,
+    );
     expect(screen.getByText('Meals In')).toBeInTheDocument();
   });
 });
