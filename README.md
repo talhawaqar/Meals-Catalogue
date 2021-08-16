@@ -4,7 +4,7 @@ This project is a Catalogue of meals. This project uses the 'themealsdb' API to 
 
 ### Screenshot
 
-![](/public/screenshot.jog)
+![](/public/screenshot.jpg)
 
 ## 🔧 Built with
 
