@@ -1,0 +1,17 @@
+.hero {
+  height: 400px;
+  background-size: cover;
+}
+
+.main {
+  background-color: #fafafa;
+}
+
+.main h1 {
+  font-size: 32px;
+}
+
+.main span.heading {
+  font-weight: bold;
+  font-size: 16px;
+}
